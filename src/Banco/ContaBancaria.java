@@ -1,67 +1,65 @@
 package Banco;
 
+// Classe Pai
 public class ContaBancaria {
 
-    private String titular;
-    private double saldo;
-    private String numConta;
+    // Usando encapsulamento
+    private String titular; 
+    private double saldo; 
+    private String numConta; 
 
-    // Construtor
+    // Construtor 
     public ContaBancaria(String titular, double saldo, String numConta) {
         super();
-        this.titular = titular;
-        this.saldo = saldo;
-        this.numConta = numConta;
+        this.titular = titular; 
+        this.saldo = saldo; 
+        this.numConta = numConta; 
     }
 
-    // Métodos get
+    // gets
     public String getTitular() {
-        return titular;
+        return titular; 
     }
-
     public double getSaldo() {
-        return saldo;
+        return saldo; 
     }
-
     public String getNumConta() {
-        return numConta;
+        return numConta; 
     }
 
-    // Métodos set
+    // sets
     public void setTitular(String titular) {
-        this.titular = titular;
+        this.titular = titular; 
     }
-
     public void setSaldo(double saldo) {
-        this.saldo = saldo;
+        this.saldo = saldo; 
     }
-
     public void setNumConta(String numConta) {
-        this.numConta = numConta;
+        this.numConta = numConta; 
     }
 
-    // Método depositar
+    // Depositando um valor na conta
     public void depositar(double valor) {
-        if (valor > 0) {
-            saldo += valor;
-            System.out.println(String.format("Depósito de %.2f R$ realizado com sucesso.", valor)); // Corrigido
+        if (valor > 0) { 
+            saldo += valor; // Adiciona o valor ao saldo da conta
+            System.out.println(String.format("Depósito de %.2f R$ realizado com sucesso.", valor)); 
         } else {
-            System.out.println("Valor depositado inválido.");
+            System.out.println("Valor depositado inválido."); 
         }
     }
 
-    // Método sacar
+    // Sacando um valor da conta
     public void sacar(double valor) {
         if (valor > 0 && saldo >= valor) {
-            saldo -= valor;
-            System.out.println(String.format("Saque de %.2f R$ realizado com sucesso.", valor)); // Corrigido
+            saldo -= valor; // Deduz o valor do saldo da conta
+            System.out.println(String.format("Saque de %.2f R$ realizado com sucesso.", valor)); 
         } else {
-            System.out.println("Saque inválido ou insuficiente.");
+            System.out.println("Saque inválido ou insuficiente."); 
         }
     }
 
-    // Método para exibir saldo
+    // Exibindo o saldo atual da conta
     public void exibirSaldo() {
-        System.out.println(String.format("Saldo atual da conta %s: %.2f R$.", numConta, saldo)); // Corrigido
+        System.out.println(String.format("Saldo atual da conta %s: %.2f R$.", numConta, saldo)); 
     }
 }
